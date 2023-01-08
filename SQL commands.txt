@@ -1,0 +1,5 @@
+UC1 Create database and table : 
+
+create database Payroll_Service;
+use Payroll_Service;
+create table Employee_Payroll(id int);
