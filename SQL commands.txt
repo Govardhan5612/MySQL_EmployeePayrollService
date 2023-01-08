@@ -113,3 +113,30 @@ select sum(salary), avg(salary), max(salary), min(salary) from Employee_Payroll 
 alter table Employee_Payroll add Phone_Number int;
 alter table Employee_Payroll add Department varchar(20) not null;
 alter table Employee_Payroll add Address varchar(20) default 'Tirupati';
+
+UC9 Exted columns in Employee payroll table ; 
+
+create database Payroll_Service;
+use Payroll_Service;
+create table Employee_Payroll(
+Employee_id int auto_increment,
+Name varchar(20),
+salary int,
+startDate date,
+primary key(Employee_id));
+insert into Employee_Payroll(Name,salary,startDate)values('Govardhan','2500','2022-07-25');
+insert into Employee_Payroll(Name,salary,startDate)values('Bill','3000','2023-01-05');
+select salary from Employee_Payroll where Name = 'Bill';
+alter table Employee_Payroll add Gender varchar(1);
+update Employee_Payroll set Gender ='M' where Employee_id = '1' or Employee_id = '2' ;
+insert into Employee_Payroll(Name,salary,startDate,Gender)values('Charlie','4500','2022-01-05','F');
+insert into Employee_Payroll(Name,salary,startDate,Gender)values('Siri','2800','2022-05-05','F');
+select sum(salary), avg(salary), max(salary), min(salary) from Employee_Payroll where Gender = 'F' group by Gender;
+alter table Employee_Payroll add Phone_Number int;
+alter table Employee_Payroll add Department varchar(20) not null;
+alter table Employee_Payroll add Address varchar(20) default 'Tirupati';
+alter table Employee_Payroll add (BasicPay int,Deductions int,TaxablePay int,IncomeTax int,NetPay int);
+select*from Employee_Payroll;
+insert into Employee_Payroll(Name,salary,startDate,Gender,Phone_Number,Department,Address,BasicPay,Deductions,TaxablePay,IncomeTax,NetPay)
+values('GovardhanReddy','5000','2020-2-05','M','8555','Bridge labz','Chittoor','2500','500','500','500','5000');
+update Employee_Payroll set Department ='CSE' where Employee_id = '1' or Employee_id = '2'or Employee_id = '3' or Employee_id = '4' ;
