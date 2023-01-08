@@ -40,3 +40,16 @@ primary key(Employee_id));
 insert into Employee_Payroll(Name,salary,startDate)values('Govardhan','2500','2022-07-25');
 insert into Employee_Payroll(Name,salary,startDate)values('Bill','3000','2023-01-05');
 select*from Employee_Payroll;
+
+UC5 Retrive perticular employee salary : 
+create database Payroll_Service;
+use Payroll_Service;
+create table Employee_Payroll(
+Employee_id int auto_increment,
+Name varchar(20),
+salary int,
+startDate date,
+primary key(Employee_id));
+insert into Employee_Payroll(Name,salary,startDate)values('Govardhan','2500','2022-07-25');
+insert into Employee_Payroll(Name,salary,startDate)values('Bill','3000','2023-01-05');
+select salary from Employee_Payroll where Name = 'Bill';
