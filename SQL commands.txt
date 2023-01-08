@@ -70,3 +70,23 @@ select salary from Employee_Payroll where Name = 'Bill';
 alter table Employee_Payroll add Gender varchar(1);
 update Employee_Payroll set Gender ='M' where Employee_id = '1' or Employee_id = '2' ;
 select*from Employee_Payroll;
+
+UC7 Ability to find sum, average, minimum and maximum female employees : 
+
+create database Payroll_Service;
+use Payroll_Service;
+create table Employee_Payroll(
+Employee_id int auto_increment,
+Name varchar(20),
+salary int,
+startDate date,
+primary key(Employee_id));
+insert into Employee_Payroll(Name,salary,startDate)values('Govardhan','2500','2022-07-25');
+insert into Employee_Payroll(Name,salary,startDate)values('Bill','3000','2023-01-05');
+select salary from Employee_Payroll where Name = 'Bill';
+alter table Employee_Payroll add Gender varchar(1);
+update Employee_Payroll set Gender ='M' where Employee_id = '1' or Employee_id = '2' ;
+insert into Employee_Payroll(Name,salary,startDate,Gender)values('Charlie','4500','2022-01-05','F');
+insert into Employee_Payroll(Name,salary,startDate,Gender)values('Siri','2800','2022-05-05','F');
+select*from Employee_Payroll;
+select sum(salary), avg(salary), max(salary), min(salary) from Employee_Payroll where Gender = 'F' group by Gender;
