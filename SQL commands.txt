@@ -3,3 +3,13 @@ UC1 Create database and table :
 create database Payroll_Service;
 use Payroll_Service;
 create table Employee_Payroll(id int);
+
+UC2 Add columns Employee payroll table : 
+
+create table Employee_Payroll(
+Employee_id int auto_increment,
+Name varchar(20),
+salary int,
+startDate date,
+primary key(Employee_id));
+select*from Employee_Payroll;
