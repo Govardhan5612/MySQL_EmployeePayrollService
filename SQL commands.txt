@@ -13,3 +13,16 @@ salary int,
 startDate date,
 primary key(Employee_id));
 select*from Employee_Payroll;
+
+UC3 Add data to table :
+
+create database Payroll_Service;
+use Payroll_Service;
+create table Employee_Payroll(
+Employee_id int auto_increment,
+Name varchar(20),
+salary int,
+startDate date,
+primary key(Employee_id));
+insert into Employee_Payroll(Name,salary,startDate)values('Govardhan','2500','2022-07-25');
+select*from Employee_Payroll;
